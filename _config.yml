@@ -4,7 +4,7 @@ meta_description: "Allen Smith - Writer, teacher, filmmaker"
 
 aboutPage: true
 
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 
 paginate: 20
