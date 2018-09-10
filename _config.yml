@@ -17,10 +17,19 @@ url:            'http://loranallensmith.com'
 author:         'Allen Smith'
 authorTwitter:  'loranallensmith'
 
+twitter: loranallensmith
+linkedin: loranallensmith
+github: loranallensmith
+email: allen@loranallensmith.com
+
 permalink:       /:year/:title/
 
 sass:
   sass_dir: assets/sass
+
+collections:
+  showpieces:
+    output: true
 
 defaults:
     -
