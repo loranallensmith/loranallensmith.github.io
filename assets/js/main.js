@@ -231,16 +231,44 @@
 					var $a = $(this),
 						$gallery = $a.parents('.gallery'),
 						$modal = $gallery.children('.modal'),
-						$modalImg = $modal.find('img'),
+						$modalInner = $modal.find('.inner'),
+						embedURL = $a.data("embed"),
 						href = $a.attr('href');
 
 					// Not an image? Bail.
-						if (!href.match(/\.(jpg|gif|png|mp4)$/))
-							return;
+					if (!href.match(/\.(jpg|gif|png|mp4)$/))
+						return;
+
+					// Is it an embedded video?
+					if (embedURL) {
+						$modalInner.append('<iframe src="" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+
+				  } else {
+						$modalInner.append('<img src="" />');
+					}
 
 					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
+					event.preventDefault();
+					event.stopPropagation();
+
+					$modalInner.children().first()
+					.on('load', function(event) {
+
+						var $modalElement = $(this),
+							$modal = $modalElement.parents('.modal');
+
+						setTimeout(function() {
+
+							// No longer visible? Bail.
+								if (!$modal.hasClass('visible'))
+									return;
+
+							// Set loaded.
+								$modal.addClass('loaded');
+
+						}, 275);
+					})
+
 
 					// Locked? Bail.
 						if ($modal[0]._locked)
@@ -249,8 +277,13 @@
 					// Lock.
 						$modal[0]._locked = true;
 
+          // Set element
+					  $modalImg = $modalInner.find('img');
+						$modalEmbed = $modalInner.find('iframe');
+
 					// Set src.
 						$modalImg.attr('src', href);
+						$modalEmbed.attr('src', embedURL);
 
 					// Set visible.
 						$modal.addClass('visible');
@@ -270,7 +303,9 @@
 				.on('click', '.modal', function(event) {
 
 					var $modal = $(this),
-						$modalImg = $modal.find('img');
+						$modalImg = $modal.find('img'),
+						$modalEmbed = $modal.find('iframe'),
+						$modalInner = $modal.find('.inner');
 
 					// Locked? Bail.
 						if ($modal[0]._locked)
@@ -297,6 +332,8 @@
 
 								// Clear src.
 									$modalImg.attr('src', '');
+									$modalEmbed.attr('src', '');
+									$modalInner.empty();
 
 								// Unlock.
 									$modal[0]._locked = false;
@@ -318,12 +355,12 @@
 							$modal.trigger('click');
 
 				})
-				.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
-					.find('img')
+				.prepend('<div class="modal" tabIndex="-1"><div class="inner"></div></div>')
+					.find('.inner')
 						.on('load', function(event) {
 
-							var $modalImg = $(this),
-								$modal = $modalImg.parents('.modal');
+							var $modalInner = $(this),
+								$modal = $modalInner.parents('.modal');
 
 							setTimeout(function() {
 

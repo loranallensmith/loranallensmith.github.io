@@ -69,7 +69,11 @@ layout: default
           <div class="gallery style2 medium lightbox onscroll-fade-in">
             {% for sample in site.showpieces %}
             <article>
-              <a href="{{ sample.url }}" class="image">
+              {% if sample.embed != nil %}
+                <a href="/images/{{ sample.image }}" class="image" data-embed="{{ sample.embed }}">
+              {% else %}
+                <a href="/images/{{ sample.image }}" class="image">
+              {% endif %}
                 <img src="images/{{ sample.image }}" alt="" />
               </a>
               <div class="caption">
@@ -225,13 +229,12 @@ layout: default
       <section class="wrapper style1 align-center">
         <div class="inner">
           <h2>Tools and Specializations</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+          <p>I challenge myself to learn new skills daily.  These are a few areas of my expertise that I find myself tapping into most often to help creative teams produce the incredible work they have inside of them.</p>
           <div class="items style1 medium onscroll-fade-in">
             {% for specialization in site.data.specializations %}
             <section>
               <span class="icon style2 major fa-{{ specialization.icon }}"></span>
               <h3>{{ specialization.name }}</h3>
-              <p>{{ specialization.description }}</p>
             </section>
             {% endfor %}
           </div>
