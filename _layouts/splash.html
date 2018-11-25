@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+    <!-- One -->
+      <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div class="content">
+          <h1>My name is Allen Smith</h1>
+          <p class="major">I'm a dad who tells stories with code and movies, and music.</p>
+          <ul class="actions stacked">
+            <li><a href="#first" class="button big wide smooth-scroll-middle">and lots of other things too</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="{{site.url}}/images/allensmith-profile.jpg" alt="" />
+        </div>
+      </section>
+
+    <!-- Two -->
+      <section class="spotlight style1 orient-right content-align-left image-position-left onscroll-image-fade-in" id="first">
+        <div class="content">
+          <h2>Creative Direction</h2>
+          <p>I use facilitation, coaching, data, and strategic planning to help sharpen different points of view into consensus and then work to help folks unleash their collective creativity together.  I believe the best directors are servant-leaders first, and I'm a tireless advocate for the brilliant people whose creative work brings to life the stories we're working together to tell.</p>
+          <ul class="actions stacked">
+            <li><a href="#contact" class="button smooth-scroll-middle">How can I empower your team?</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/creative-direction.png" alt="" />
+        </div>
+      </section>
+
+    <!-- Three -->
+      <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Multimedia Production</h2>
+          <p>For over twenty years, I have been creating music, movies, illustrations, animations, software—and everything in between—to tell emotionally engaging stories.  I thrive within constraints and seek out opportunities to create the things that others believe can't be done.  I'm a self-taught expert at making mistakes, but I'm even better at learning from them.</p>
+          <ul class="actions stacked">
+            <li><a href="#contact" class="button smooth-scroll-middle">Let's make mistakes together</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/mixing-board-alt.jpg" alt="" />
+        </div>
+      </section>
+
+    <!-- Four -->
+      <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+        <div class="content">
+          <h2>Facilitation and Teaching</h2>
+          <p>I have developed and delivered curriculum and presentations over a myriad of topics including screenwriting, motion picture production, film analysis, the creative process, software development, collaboration, project management, highly distributed workforces, and professional development.  I'm still working on getting booked at my daughter's preschool career day though.</p>
+          <ul class="actions stacked">
+            <li><a href="#contact" class="button smooth-scroll-middle">Teach me something, dad</a></li>
+          </ul>
+        </div>
+        <div class="image">
+          <img src="images/git-merge-pickles.png" alt="" />
+        </div>
+      </section>
+
+    <!-- Five -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>The Fridge Door</h2>
+          <p>Here are a few things I'm especially proud of.  So many of these samples are the products of collaborative efforts with incredible folks whom I've had the privilege of working alongside.  Where appropriate, I've noted my specific contributions to projects.</p>
+        </div>
+
+        <!-- Gallery -->
+          <div class="gallery style2 medium lightbox onscroll-fade-in">
+            {% for sample in site.showpieces %}
+            <article>
+              {% if sample.embed != nil %}
+                <a href="/images/{{ sample.image }}" class="image" data-embed="{{ sample.embed }}">
+              {% else %}
+                <a href="/images/{{ sample.image }}" class="image">
+              {% endif %}
+                <img src="images/{{ sample.image }}" alt="" />
+              </a>
+              <div class="caption">
+                <h3>
+                  {% if sample.client %}
+                    {{ sample.client }}:
+                  {% endif %}
+                  {{ sample.title }}</h3>
+                <p>{{ sample.credits }}</p>
+                <ul class="actions fixed">
+                  <li><span class="button small">Details</span></li>
+                </ul>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+
+      </section>
+
+    <!-- Six -->
+      <section class="wrapper style1 align-center">
+        <div class="inner">
+          <h2>Tools and Specializations</h2>
+          <p>I challenge myself to learn new skills daily.  These are a few areas of my expertise that I find myself tapping into most often to help creative teams produce the incredible work they have inside of them.</p>
+          <div class="items style1 medium onscroll-fade-in">
+            {% for specialization in site.data.specializations %}
+            <section>
+              <span class="icon style2 major fa-{{ specialization.icon }}"></span>
+              <h3>{{ specialization.name }}</h3>
+            </section>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+    <!-- Seven -->
+      <section class="wrapper style1 align-center" id="contact">
+        <div class="inner medium">
+          <h2>Let's make things together.</h2>
+          <p>Drop me a line with the form below or send an email to <a href="mailto:info@loranallensmith.com">info@loranallensmith.com.</a></p>
+          <form method="post" action="https://formspree.io/info@loranallensmith.com">
+            <div class="fields">
+              <div class="field half">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="" />
+              </div>
+              <div class="field half">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="6"></textarea>
+              </div>
+            </div>
+            <ul class="actions special">
+              <li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
+            </ul>
+          </form>
+
+        </div>
+      </section>

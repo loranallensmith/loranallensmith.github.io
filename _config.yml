@@ -1,0 +1,52 @@
+name: Allen Smith
+description: Writing about writing, learning, and being productive
+meta_description: "Allen Smith - Writer, teacher, filmmaker"
+
+aboutPage: true
+
+markdown: kramdown
+highlighter: pygments
+
+paginate: 20
+baseurl: /
+domain_name: 'http://loranallensmith.com'
+google_analytics: 'UA-XXXXXXXX-X'
+
+# Details for the RSS feed generator
+url:            'http://loranallensmith.com'
+author:         'Allen Smith'
+authorTwitter:  'loranallensmith'
+
+twitter: loranallensmith
+linkedin: loranallensmith
+github: loranallensmith
+email: allen@loranallensmith.com
+
+permalink:       /:year/:title/
+
+sass:
+  sass_dir: assets/sass
+
+collections:
+  showpieces:
+    output: false
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
