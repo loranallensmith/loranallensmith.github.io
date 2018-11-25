@@ -6,8 +6,8 @@ markdown: kramdown
 highlighter: rouge
 
 baseurl: /
-domain_name: 'http://loranallensmith.com'
-url:            'http://loranallensmith.com'
+domain_name: 'https://loranallensmith.com'
+url:            'https://loranallensmith.com'
 
 author: loranallensmith
 
