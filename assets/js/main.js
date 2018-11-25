@@ -246,10 +246,10 @@
 
 						switch (urlData.hostname) {
 							case "player.vimeo.com":
-								$modalInner.append('<iframe src="" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+								$modalInner.append('<iframe src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 								break;
 							case "www.youtube.com":
-								$modalInner.append('<iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+								$modalInner.append('<iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 								break;
 							default:
 						}
