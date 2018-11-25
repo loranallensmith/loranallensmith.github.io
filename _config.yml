@@ -1,23 +1,30 @@
-name: Allen Smith
-description: Writing about writing, learning, and being productive
-meta_description: "Allen Smith - Writer, teacher, filmmaker"
-
-aboutPage: true
+title: Allen Smith Creative
+description: I'm a dad who tells stories with code, movies, and music.
+meta_description: "I'm a dad who tells stories with code, movies, and music."
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
-paginate: 20
 baseurl: /
 domain_name: 'http://loranallensmith.com'
-google_analytics: 'UA-XXXXXXXX-X'
-
-# Details for the RSS feed generator
 url:            'http://loranallensmith.com'
-author:         'Allen Smith'
-authorTwitter:  'loranallensmith'
 
-twitter: loranallensmith
+author: loranallensmith
+
+# SEO Info
+google_site_verification: 'UA-78818462-2'
+
+twitter:
+  username: loranallensmith
+  card: summary
+
+logo: /images/allensmith-profile.png
+
+social:
+  - https://twitter.com/loranallensmith
+  - https://linkedin.com/in/loranallensmith
+  - https://github.com/loranallensmith
+
 linkedin: loranallensmith
 github: loranallensmith
 email: allen@loranallensmith.com
@@ -31,22 +38,5 @@ collections:
   showpieces:
     output: false
 
-defaults:
-    -
-        scope:
-            path: "" # empty string for all files
-            type: pages
-        values:
-            layout: default
-    -
-        scope:
-            path: "" # empty string for all files
-            type: posts
-        values:
-            layout: post
-    -
-        scope:
-            path: ""
-            type: drafts
-        values:
-            layout: post
+plugins:
+  - jekyll-seo-tag
