@@ -40,3 +40,9 @@ collections:
 
 plugins:
   - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/allensmith-profile.jpg
