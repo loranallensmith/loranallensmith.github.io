@@ -293,6 +293,14 @@
 					  $modalImg = $modalInner.find('img');
 						$modalEmbed = $modalInner.find('iframe');
 
+					// Conditionally set dimensions for mobile
+					if (!browser.mobile) {
+						$modalEmbed.attr('width', 640)
+						$modalEmbed.attr('height', 360)
+					} else {
+						// Do nothing; let the CSS rules work.
+					}
+
 					// Set src.
 						$modalImg.attr('src', href);
 						$modalEmbed.attr('src', embedURL);
