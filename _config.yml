@@ -6,13 +6,13 @@ markdown: kramdown
 highlighter: rouge
 
 baseurl: /
-domain_name: 'https://loranallensmith.com'
-url:            'https://loranallensmith.com'
+domain_name: 'https://loranallensmith.me'
+url:            'https://loranallensmith.me'
 
 author: loranallensmith
 
 # SEO Info
-google_site_verification: 'UA-78818462-2'
+google_site_verification: 'UA-54264286-1'
 
 twitter:
   username: loranallensmith
@@ -27,7 +27,7 @@ social:
 
 linkedin: loranallensmith
 github: loranallensmith
-email: allen@loranallensmith.com
+email: info@loranallensmith.me
 
 permalink:       /:year/:title/
 
