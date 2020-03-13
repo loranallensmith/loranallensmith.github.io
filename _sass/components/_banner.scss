@@ -255,7 +255,7 @@
 
 			img {
 				@include vendor('object-fit', 'cover');
-				@include vendor('object-position', 'center');
+				@include vendor('object-position', 'top');
 				display: block;
 				position: absolute;
 				top: 0;
@@ -264,7 +264,9 @@
 				height: 100%;
 				border-radius: 0;
 			}
+
 		}
+
 
 		@include breakpoint('<=xlarge') {
 			.content {
