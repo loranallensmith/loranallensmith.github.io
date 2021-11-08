@@ -42,4 +42,4 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/allensmith-profile.jpg
+      image: /images/foosball.jpg
