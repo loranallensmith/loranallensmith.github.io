@@ -18,7 +18,7 @@ twitter:
   username: loranallensmith
   card: summary_large_image
 
-logo: /images/allensmith-profile.png
+logo: /images/foosball-og.jpg
 
 social:
   - https://twitter.com/loranallensmith
@@ -42,4 +42,4 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/foosball.jpg
+      image: /images/foosball-og.jpg
